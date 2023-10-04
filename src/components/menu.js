@@ -16,11 +16,11 @@ class MenuBar extends Component{
         let elementsMenu = this.menuItems.filter((element) => element.idPadre==this.id)
         let elementsSubMenu = this.menuItems.filter((element) => element.idPadre!=this.id)
         return(
-            <div className="menu">
+            <ul className="menu">
                 {elementsMenu.map((menu, index)=> {
-                    return <div key={index}><MenuItem menu={menu} elementsSubMenu={elementsSubMenu}></MenuItem></div>
+                    return <MenuItem menu={menu} elementsSubMenu={elementsSubMenu} key={index}></MenuItem>
                 })}
-            </div>
+            </ul>
         )
     }
 }

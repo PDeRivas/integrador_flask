@@ -2,41 +2,41 @@ import { Component, React } from "react";
 import PropTypes from 'prop-types'
 import './menu_subitem.css'
 
-class MenuSubItem extends Component{
-    constructor(props){
+class MenuSubItem extends Component {
+    constructor(props) {
         super()
         this.menu = props.menu
         this.hasSubMenu = props.hasSubMenu
-        this.state = {activo: false}
+        this.state = { activo: false }
         this.id = this.menu.id
         this.elementsSubMenu = props.elementsSubMenu
     }
 
-    handleEnter = ()=>{
-        if(this.menu.isFolder){
-            this.setState({activo: true})
+    handleEnter = () => {
+        if (this.menu.isFolder) {
+            this.setState({ activo: true })
         }
     }
 
-    handleLeave = () =>{
-        this.setState({activo: false})
+    handleLeave = () => {
+        this.setState({ activo: false })
     }
 
-    render(){
+    render() {
         let title = this.menu.name
-        let elementsChildren = this.elementsSubMenu.filter((element)=>element.idPadre==this.id)
-        let elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre!=this.id)
+        let elementsChildren = this.elementsSubMenu.filter((element) => element.idPadre == this.id)
+        let elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre != this.id)
 
-            return(
-                <div onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="subboton">
-                    <a>{title}</a>
-                    <div className="submenu">
-                        {this.state.activo && elementsChildren.map((menu, index)=>{
-                        return <div key={index} className="submenu"><MenuSubItem menu={menu} elementsSubMenu={elementsSubMenu}></MenuSubItem></div>
-                        })}
-                    </div>
-                </div>
-            )   
+        return (
+            <li onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="subboton">
+                <a className="menubar">{title}</a>
+                <ul className="submenu">
+                    {this.state.activo && elementsChildren.map((menu, index) => {
+                        return <MenuSubItem className='subitems' key={index}  menu={menu} elementsSubMenu={elementsSubMenu}></MenuSubItem>
+                    })}
+                </ul>
+            </li>
+        )
     }
 }
 
