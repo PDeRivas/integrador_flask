@@ -1,0 +1,9 @@
+.subboton{
+    display: flex;
+    flex-direction: row;
+}
+
+.submenu{
+    display: flex;
+    flex-direction: column;
+}

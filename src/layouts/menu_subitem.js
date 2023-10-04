@@ -28,11 +28,13 @@ class MenuSubItem extends Component{
         let elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre!=this.id)
 
             return(
-                <div onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="subboto">
-                    <button>{title}</button>
-                    {this.state.activo && elementsChildren.map((menu, index)=>{
-                    return <div key={index} className="submenu"><MenuSubItem menu={menu} elementsSubMenu={elementsSubMenu}></MenuSubItem></div>
-                    })}
+                <div onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="subboton">
+                    <a>{title}</a>
+                    <div className="submenu">
+                        {this.state.activo && elementsChildren.map((menu, index)=>{
+                        return <div key={index} className="submenu"><MenuSubItem menu={menu} elementsSubMenu={elementsSubMenu}></MenuSubItem></div>
+                        })}
+                    </div>
                 </div>
             )   
     }
