@@ -1,34 +1,47 @@
 import { Component, React } from "react";
 import PropTypes from 'prop-types'
 import MenuSubItem from "./menu_subitem";
+import './menu_item.css'
 
 class MenuItem extends Component{
     constructor(props){
         super()
         this.state = {activo: false}
         this.menu = props.menu
+        this.id = this.menu.id
+        this.elementsSubMenu = props.elementsSubMenu
     }
 
     handleEnter = ()=>{
-        this.setState({activo: true})
         if(this.menu.isFolder){
-            console.log('HandleClick Hovereado')
+            this.setState({activo: true})
         }
+    }
+
+    handleLeave = () =>{
+        this.setState({activo: false})
     }
 
     render(){
         let title = this.menu.name
+        let elementsChildren = this.elementsSubMenu.filter((element)=>element.idPadre==this.id)
+        let elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre!=this.id)
+        
         return(
-            <>
-            <button onMouseEnter={this.handleEnter}>{title}</button>
-            <MenuSubItem estado={this.state.activo}></MenuSubItem>
-            </>
+            <div onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="botonPrincipal">
+                <button className="boton">{title}</button>
+                {this.state.activo && elementsChildren.map((menu, index)=>{
+                    return <div className="menu_boton" key={index}><MenuSubItem menu={menu} elementsSubMenu={elementsSubMenu}></MenuSubItem></div>
+                })}
+                
+            </div>
         )
     }
 }
 
 MenuItem.propTypes = {
-    menu: PropTypes.object
+    menu: PropTypes.object,
+    elementsSubMenu: PropTypes.array
 }
 
 export default MenuItem

@@ -1,0 +1,12 @@
+.botonPrincipal{
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_boton {
+   width: 10000px;
+  }
+
+.boton{
+  width: 100px;
+}

@@ -21,7 +21,7 @@ function App() {
       { name: 'Another action', isFolder: false, id: 4, idPadre: 2 },
       { name: 'sub menu', isFolder: true, id: 5, idPadre: 2 },
       { name: 'Another action', isFolder: false, id: 55, idPadre: 5 },
-      { name: 'something else here', isFolder: false, id: 56, idPadre: 5 },
+      { name: 'something else here', isFolder: true, id: 56, idPadre: 5 },
     ],
   } // end
 

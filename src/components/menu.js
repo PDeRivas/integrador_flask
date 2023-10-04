@@ -1,6 +1,7 @@
 import { Component, React } from "react";
 import PropTypes from 'prop-types'
 import MenuItem from '../layouts/menu_item'
+import './menu.css';
 
 class MenuBar extends Component{
     constructor(props){
@@ -13,12 +14,13 @@ class MenuBar extends Component{
     
     render(){
         let elementsMenu = this.menuItems.filter((element) => element.idPadre==this.id)
+        let elementsSubMenu = this.menuItems.filter((element) => element.idPadre!=this.id)
         return(
-            <>
+            <div className="menu">
                 {elementsMenu.map((menu, index)=> {
-                    return <MenuItem key={index} menu={menu}></MenuItem>
+                    return <div key={index}><MenuItem menu={menu} elementsSubMenu={elementsSubMenu}></MenuItem></div>
                 })}
-            </>
+            </div>
         )
     }
 }
