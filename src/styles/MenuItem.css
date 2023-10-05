@@ -1,4 +1,3 @@
-
 .primaryBtn {
   list-style-type: none;
   margin: 0;
@@ -7,8 +6,8 @@
   display: block;
 }
 
-.title {
-  cursor:pointer;
+.menuName {
+  cursor: pointer;
   text-decoration: none;
   color: #333;
   display: block;
@@ -17,6 +16,7 @@
   display: block;
 }
 
+/* Coloca al submenu por debajo */
 .subMenu {
   padding: 0;
   display: block;

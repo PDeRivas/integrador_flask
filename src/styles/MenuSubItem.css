@@ -1,28 +1,29 @@
-/* menu_subitem.css */
-
 .subBtn {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.menuBar {
-    cursor:pointer;
+.subMenuName {
+    cursor: pointer;
     text-decoration: none;
-    color: #333; /* Color del texto del submenú */
+    color: #333;
+
     display: block;
     padding: 10px 15px;
-    background-color: #f2f2f2; /* Color de fondo del submenú */
+    background-color: #f2f2f2;
+
     list-style-type: none;
     position: relative;
     background-color: #f2f2f2;
 }
 
+/* Coloca al submenu a la derecha */
 .subMenuRight {
     list-style-type: none;
     padding: 0;
     position: absolute;
     top: 70%;
-    left: 100%; /* Coloca el submenú a la derecha del elemento padre */
+    left: 100%;
     background-color: #f2f2f2;
 }
