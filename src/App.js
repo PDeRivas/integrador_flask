@@ -3,7 +3,7 @@ import React from 'react'
 import DrawClass from './components/DrawClass'
 import MenuBar from './components/MenuBar'
 
-function App() {
+function App () {
   const configMenu = {
     configColor: {
       background: '#f4f5fa', // Color de Fondo General de la botonera
@@ -37,13 +37,31 @@ function App() {
     textColor: '#333333'
   }
 
+  const CLASS_UML2 = {
+    name: 'Person',
+    attributes: ['+name:str', '+phoneNumber:str'],
+    methods: ['+purcharseParkinPass()'],
+    borderColor: '#17FFA1',
+    headColor: '#17FFA1',
+    textColor: '#333333'
+  }
+
+  const CLASS_UML3 = {
+    name: 'Person',
+    attributes: [],
+    methods: ['+purcharseParkinPass()', '+purcharseParkinPass()', '+purcharseParkinPass()', '+purcharseParkinPass()'],
+    borderColor: '#FFFFAA',
+    headColor: '#FFFFAA',
+    textColor: '#333333'
+  }
+
   return (
     <div className="App">
       <MenuBar config={configMenu} />
       <div>
         <DrawClass data={CLASS_UML} />
-        <DrawClass data={CLASS_UML} />
-        <DrawClass data={CLASS_UML} />
+        <DrawClass data={CLASS_UML2} />
+        <DrawClass data={CLASS_UML3} />
       </div>
     </div>
   )

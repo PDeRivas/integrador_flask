@@ -4,7 +4,7 @@ import MenuSubItem from './MenuSubItem'
 import '../styles/MenuItem.css'
 
 class MenuItem extends Component {
-  constructor(props) {
+  constructor (props) {
     super()
     this.menu = props.menu
     this.id = this.menu.id
@@ -27,7 +27,7 @@ class MenuItem extends Component {
     this.setState({ activo: false, itemColor: this.background })
   }
 
-  render() {
+  render () {
     const title = this.menu.name
     // Listado con todos los elementos que saldran a partir del MenuItem
     const elementsChildren = this.elementsSubMenu.filter((element) => element.idPadre === this.id)
@@ -36,7 +36,7 @@ class MenuItem extends Component {
 
     return (
       <li onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} onClick={this.handleLeave} className="primaryBtn">
-        <a className="menuName" style={{ color: this.itemColor, backgroundColor: this.state.itemColor }}>{title}{this.menu.isFolder ? '→' : ''}</a>
+        <a className="menuName" style={{ color: this.itemColor, backgroundColor: this.state.itemColor }}>{title}{this.menu.isFolder ? '↓' : ''}</a>
         <ul className="subMenu">
           {this.state.activo && elementsChildren.map((menu, index) => {
             return <MenuSubItem key={index} menu={menu} elementsSubMenu={elementsSubMenu} subitemColor={this.subitemColor} textColor={this.itemColor} itemActive={this.itemActive} />
