@@ -4,7 +4,7 @@ import MenuItem from './MenuItem'
 import '../styles/MenuBar.css'
 
 class MenuBar extends Component {
-  constructor (props) {
+  constructor(props) {
     super()
     const config = props.config
     this.configColor = config.configColor
@@ -12,18 +12,18 @@ class MenuBar extends Component {
     this.menuItems = config.menuItems
   }
 
-  render () {
+  render() {
     // Elementos que van en el MenuBar
     const elementsMenu = this.menuItems.filter((element) => element.idPadre === this.id)
     // Elementos que se despliegan de otro MenuItem
     const elementsSubMenu = this.menuItems.filter((element) => element.idPadre !== this.id)
 
     return (
-            <ul className="menu" style={{ backgroundColor: this.configColor.background }}>
-                {elementsMenu.map((menu, index) => {
-                    return <MenuItem key={index} menu={menu} elementsSubMenu={elementsSubMenu} itemColor={this.configColor.itemColor} background={this.configColor.background} subitemColor={this.configColor.itemBackground} itemActive={this.configColor.itemActive} />
-                })}
-            </ul>
+      <ul className="menu" style={{ backgroundColor: this.configColor.background }}>
+        {elementsMenu.map((menu, index) => {
+          return <MenuItem key={index} menu={menu} elementsSubMenu={elementsSubMenu} itemColor={this.configColor.itemColor} background={this.configColor.background} subitemColor={this.configColor.itemBackground} itemActive={this.configColor.itemActive} />
+        })}
+      </ul>
     )
   }
 }

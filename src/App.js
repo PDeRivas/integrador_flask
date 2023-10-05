@@ -1,9 +1,9 @@
-import './App.css';
-import React from 'react';
-import DrawClass from './components/DrawClass';
+import './App.css'
+import React from 'react'
+import DrawClass from './components/DrawClass'
 import MenuBar from './components/MenuBar'
 
-function App () {
+function App() {
   const configMenu = {
     configColor: {
       background: '#f4f5fa', // Color de Fondo General de la botonera
@@ -30,23 +30,23 @@ function App () {
 
   const CLASS_UML = {
     name: 'Person',
-    attributes: ['+name:str','+phoneNumber:str','+emailAddress:str'],
-    methods:['+purcharseParkinPass()'],
-    borderColor:'#DC2DDE',
-    headColor:'#DC2DDE',
-    textColor:'#333333'
-    }
+    attributes: ['+name:str', '+phoneNumber:str', '+emailAddress:str'],
+    methods: ['+purcharseParkinPass()'],
+    borderColor: '#DC2DDE',
+    headColor: '#DC2DDE',
+    textColor: '#333333'
+  }
 
   return (
     <div className="App">
       <MenuBar config={configMenu} />
       <div>
-      <DrawClass data={CLASS_UML} />
-      <DrawClass data={CLASS_UML} />
-      <DrawClass data={CLASS_UML} />
+        <DrawClass data={CLASS_UML} />
+        <DrawClass data={CLASS_UML} />
+        <DrawClass data={CLASS_UML} />
       </div>
     </div>
-  );
+  )
 }
 
 export default App
