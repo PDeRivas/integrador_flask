@@ -1,0 +1,27 @@
+.primaryBtn {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+}
+
+.menuName {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 10px 15px;
+  background-color: #f2f2f2;
+  display: block;
+}
+
+/* Coloca al submenu por debajo */
+.subMenu {
+  padding: 0;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  box-shadow: 10px 10px 5px #ADD8E6;
+}
