@@ -1,6 +1,6 @@
-import { Component, React } from "react";
+import { Component, React } from 'react'
 import PropTypes from 'prop-types'
-import '../styles/MenuSubItem.css';
+import '../styles/MenuSubItem.css'
 
 class MenuSubItem extends Component {
     constructor(props) {
@@ -12,8 +12,7 @@ class MenuSubItem extends Component {
         this.textColor = props.textColor
         this.state = { activo: false, subitemColor: this.subitemColor }
         this.itemActive = props.itemActive
-    }
-
+  }
     handleEnter = () => {
         this.setState({ subitemColor: this.itemActive })
         if (this.menu.isFolder) {
@@ -25,14 +24,14 @@ class MenuSubItem extends Component {
         this.setState({ activo: false, subitemColor: this.subitemColor })
     }
 
-    render() {
-        let title = this.menu.name
-        // Listado con todos los elementos que saldran a partir del MenuItem
-        let elementsChildren = this.elementsSubMenu.filter((element) => element.idPadre == this.id)
-        // Listado con todos los elementos que pueden salir a partir de un MenuSubItem
-        let elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre != this.id)
+  render () {
+    const title = this.menu.name
+    // Listado con todos los elementos que saldran a partir del MenuItem
+    const elementsChildren = this.elementsSubMenu.filter((element) => element.idPadre === this.id)
+    // Listado con todos los elementos que pueden salir a partir de un MenuSubItem
+    const elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre !== this.id)
 
-        return (
+    return (
             <li onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="subBtn">
                 <a className="subMenuName" style={{ color:this.textColor, backgroundColor: this.state.subitemColor }}>{title} {this.menu.isFolder ? this.state.activo ? "🡣" : "🡢" : ""}</a>
                 <ul className="subMenuRight">
@@ -41,8 +40,8 @@ class MenuSubItem extends Component {
                     })}
                 </ul>
             </li>
-        )
-    }
+    )
+  }
 }
 
 MenuSubItem.propTypes = {

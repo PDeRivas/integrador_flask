@@ -1,7 +1,7 @@
-import { Component, React } from "react";
+import { Component, React } from 'react'
 import PropTypes from 'prop-types'
-import MenuSubItem from "./MenuSubItem";
-import '../styles/MenuItem.css';
+import MenuSubItem from './MenuSubItem'
+import '../styles/MenuItem.css'
 
 class MenuItem extends Component {
     constructor(props) {
@@ -14,28 +14,27 @@ class MenuItem extends Component {
         this.elementsSubMenu = props.elementsSubMenu
         this.state = { activo: false, itemColor: this.background}
         this.itemActive = props.itemActive
-    }
 
-    handleEnter = () => {
-        this.setState({ itemColor: this.itemActive })
-        if (this.menu.isFolder) {
-            this.setState({ activo: true })
-        }
+  }
+
+  handleEnter = () => {
+    this.setState({ itemColor: this.itemActive })
+    if (this.menu.isFolder) {
+      this.setState({ activo: true })
     }
+  }
 
     handleLeave = () => {
         this.setState({ activo: false, itemColor: this.background })
     }
+  render () {
+    const title = this.menu.name
+    // Listado con todos los elementos que saldran a partir del MenuItem
+    const elementsChildren = this.elementsSubMenu.filter((element) => element.idPadre === this.id)
+    // Listado con todos los elementos que pueden salir a partir de un MenuSubItem
+    const elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre !== this.id)
 
-
-    render() {
-        let title = this.menu.name
-        // Listado con todos los elementos que saldran a partir del MenuItem
-        let elementsChildren = this.elementsSubMenu.filter((element) => element.idPadre == this.id)
-        // Listado con todos los elementos que pueden salir a partir de un MenuSubItem
-        let elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre != this.id)
-
-        return (
+    return (
             <li onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} onClick={this.handleLeave} className="primaryBtn">
                 <a className="menuName" style={{ color: this.itemColor,backgroundColor: this.state.itemColor }}>{title}{this.menu.isFolder ? " 🡣" : ""}</a>
                 <ul className="subMenu">
@@ -44,8 +43,8 @@ class MenuItem extends Component {
                     })}
                 </ul>
             </li>
-        )
-    }
+    )
+  }
 }
 
 MenuItem.propTypes = {
