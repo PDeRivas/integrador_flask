@@ -1,7 +1,7 @@
 import { Component, React } from "react";
 import PropTypes from 'prop-types'
-import MenuItem from '../layouts/menu_item'
-import './menu.css';
+import MenuItem from './MenuItem'
+import '../styles/MenuBar.css'
 
 class MenuBar extends Component{
     constructor(props){
@@ -16,9 +16,9 @@ class MenuBar extends Component{
         let elementsMenu = this.menuItems.filter((element) => element.idPadre==this.id)
         let elementsSubMenu = this.menuItems.filter((element) => element.idPadre!=this.id)
         return(
-            <ul className="menu">
+            <ul className="menu" style={{backgroundColor: this.configColor.background}}>
                 {elementsMenu.map((menu, index)=> {
-                    return <MenuItem menu={menu} elementsSubMenu={elementsSubMenu} key={index}></MenuItem>
+                    return <MenuItem menu={menu} elementsSubMenu={elementsSubMenu} key={index} activeColor={this.configColor.itemActive} itemColor={this.configColor.itemColor} subitemColor={this.configColor.itemBackground}></MenuItem>
                 })}
             </ul>
         )

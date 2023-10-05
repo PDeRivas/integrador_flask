@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import MenuBar from './components/menu';
+import MenuBar from './components/MenuBar';
 
 function App() {
   const configMenu = {
@@ -22,6 +22,8 @@ function App() {
       { name: 'sub menu', isFolder: true, id: 5, idPadre: 2 },
       { name: 'Another action', isFolder: false, id: 55, idPadre: 5 },
       { name: 'something else here', isFolder: true, id: 56, idPadre: 5 },
+      { name: 'something else here', isFolder: true, id: 57, idPadre: 56 },
+      { name: 'something else here', isFolder: false, id: 58, idPadre: 57 },
     ],
   } // end
 
