@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import '../styles/DrawClass.css'
 
 export default function DrawClass( {data} ){
     const {name, attributes, methods, borderColor, headColor, textColor} = data
@@ -57,7 +58,7 @@ export default function DrawClass( {data} ){
 
     return(
     
-        <svg width={maxWidth} height={methodHeigth} >
+        <svg width={maxWidth} height={methodHeigth} className="drawClass" >
             <rect width={maxWidth} height="35" fill={headColor} strokeWidth="2" stroke={borderColor}/>
             <text x="20" y="23" fill={textColor}>{name}</text>
             <rect width={maxWidth} height={methodHeigth} fill="transparent" strokeWidth="2" stroke={borderColor}/>

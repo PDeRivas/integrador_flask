@@ -16,6 +16,8 @@ function App() {
   return (
     <div className="App">
       <DrawClass data={CLASS_UML} />
+      <DrawClass data={CLASS_UML} />
+      <DrawClass data={CLASS_UML} />
     </div>
   );
 }
