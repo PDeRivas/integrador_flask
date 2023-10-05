@@ -18,7 +18,7 @@ class MenuBar extends Component{
         return(
             <ul className="menu" style={{backgroundColor: this.configColor.background}}>
                 {elementsMenu.map((menu, index)=> {
-                    return <MenuItem menu={menu} elementsSubMenu={elementsSubMenu} key={index} activeColor={this.configColor.itemActive} itemColor={this.configColor.itemColor} subitemColor={this.configColor.itemBackground}></MenuItem>
+                    return <MenuItem menu={menu} elementsSubMenu={elementsSubMenu} key={index} activeColor={this.configColor.itemActive} itemColor={this.configColor.itemColor} subitemColor={this.configColor.itemBackground} />
                 })}
             </ul>
         )

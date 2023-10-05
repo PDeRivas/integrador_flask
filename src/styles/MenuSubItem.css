@@ -1,12 +1,12 @@
 /* menu_subitem.css */
 
-.subboton {
+.subBtn {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.menubar {
+.menuBar {
     cursor:pointer;
     text-decoration: none;
     color: #333; /* Color del texto del submenú */
@@ -18,7 +18,7 @@
     background-color: #f2f2f2;
 }
 
-.submenu-derecha {
+.subMenuRight {
     list-style-type: none;
     padding: 0;
     position: absolute;

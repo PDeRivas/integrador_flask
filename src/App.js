@@ -1,6 +1,6 @@
-import './App.css';
-import React from 'react';
-import MenuBar from './components/MenuBar';
+import './App.css'
+import React from 'react'
+import MenuBar from './components/MenuBar'
 
 function App() {
   const configMenu = {
@@ -30,9 +30,9 @@ function App() {
 
   return (
     <div className="App">
-      <MenuBar config={configMenu}></MenuBar>
+      <MenuBar config={configMenu} />
     </div>
   )
 }
 
-export default App;
+export default App

@@ -1,5 +1,5 @@
 
-.botonPrincipal {
+.primaryBtn {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
   display: block;
 }
 
-.titulo {
+.title {
   cursor:pointer;
   text-decoration: none;
   color: #333;
@@ -17,7 +17,7 @@
   display: block;
 }
 
-.submenu {
+.subMenu {
   padding: 0;
   display: block;
   position: absolute;

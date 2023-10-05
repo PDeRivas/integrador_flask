@@ -32,11 +32,11 @@ class MenuItem extends Component {
         let elementsSubMenu = this.elementsSubMenu.filter((element) => element.idPadre != this.id)
 
         return (
-            <li onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="botonPrincipal">
-                <a className="titulo" style={{backgroundColor: this.state.itemColor}}>{title}{this.menu.isFolder ? " 🡣": ""}</a>
-                <ul className="submenu">
+            <li onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave} className="primaryBtn">
+                <a className="title" style={{backgroundColor: this.state.itemColor}}>{title}{this.menu.isFolder ? " 🡣": ""}</a>
+                <ul className="subMenu">
                     {this.state.activo && elementsChildren.map((menu, index) => {
-                        return <MenuSubItem className='subitems' key={index} menu={menu} elementsSubMenu={elementsSubMenu} itemColor={this.subitemColor} itemActive={this.itemActive}></MenuSubItem>
+                        return <MenuSubItem className='subitems' key={index} menu={menu} elementsSubMenu={elementsSubMenu} itemColor={this.subitemColor} itemActive={this.itemActive} />
                     })}
                 </ul>
             </li>
