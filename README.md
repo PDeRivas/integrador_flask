@@ -1,6 +1,6 @@
 Integrantes del Proyecto:
--de Rivas Pablo
--Lombardi Simon
+ -de Rivas Pablo
+ -Lombardi Simon
 
 Proyecto integrador de la materia Javascript utilizando Reactjs
 
